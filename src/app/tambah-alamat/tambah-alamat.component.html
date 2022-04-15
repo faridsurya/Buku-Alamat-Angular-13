@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+    {{alamat.nama == undefined ? 'Tambah Alamat Baru' : 'Edit Data'}}
+    </h2>
+    
+    <mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Nama</mat-label>
+        <input matInput [(ngModel)]="alamat.nama">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Alamat</mat-label>
+        <input matInput [(ngModel)]="alamat.alamat">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Kota</mat-label>
+        <input matInput [(ngModel)]="alamat.kota">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Propinsi</mat-label>
+        <input matInput [(ngModel)]="alamat.propinsi">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Kode Pos</mat-label>
+        <input matInput [(ngModel)]="alamat.kodepos">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Nomer HP</mat-label>
+        <input matInput [(ngModel)]="alamat.hp">
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="alamat.email">
+    </mat-form-field>
+    
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+    <button mat-raised-button  [mat-dialog-close]="true">Batal</button>
+    <button mat-raised-button color="primary" (click)="simpanData()" [disabled]="loading || alamat.nama == undefined">{{loading ? 'Menyimpan..':'Simpan'}}</button>
+    </mat-dialog-actions>
+    
